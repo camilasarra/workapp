@@ -1,18 +1,19 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Description of your backend application",
   "main": "index.js",
   "scripts": {
-    "build":"echo \"No build specified\" && exit 1",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo 'No build specified' && exit 1",
+    "test": "echo 'Error: no test specified' && exit 1",
     "start": "nodemon index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Your Name",
   "license": "ISC",
   "bugs": {
-   "url": "https://github.com/camilasarra/workapp/issues",
+    "url": "https://github.com/camilasarra/workapp/issues"
+  },
   "dependencies": {
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
@@ -23,10 +24,8 @@
     "nodemon": "^3.0.3"
   },
   "repository": {
-          "type": "git",
-            "url": "git+https://github.com/camilasarra/workapp.git"
-      
-      },
-      "homepage": "https://github.com/camilasarra/workapp#readme"
-    }
+    "type": "git",
+    "url": "git+https://github.com/camilasarra/workapp.git"
+  },
+  "homepage": "https://github.com/camilasarra/workapp#readme"
 }

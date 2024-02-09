@@ -6,7 +6,8 @@
   "scripts": {
     "build": "echo 'No build specified' && exit 1",
     "test": "echo 'Error: no test specified' && exit 1",
-    "start": "nodemon index.js"
+    "start": "node index.js", // Usar directamente el comando node para iniciar la aplicación en entorno de producción
+    "dev": "nodemon index.js" // Mantener el script dev para usar nodemon en tu entorno local"
   },
   "keywords": [],
   "author": "Your Name",

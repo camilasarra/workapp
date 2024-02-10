@@ -1,19 +1,17 @@
+
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "Description of your backend application",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "cd client && npm install && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "dev": "nodemon index.js"
-},
-  "keywords": [],
-  "author": "Your Name",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/camilasarra/workapp/issues"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
@@ -24,10 +22,5 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.3"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/camilasarra/workapp.git"
-  },
-  "homepage": "https://github.com/camilasarra/workapp#readme"
+  }
 }

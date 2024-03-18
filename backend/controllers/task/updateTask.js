@@ -8,10 +8,10 @@ module.exports = async (req, res) => {
         if (!updatedTask) {
             return res.status(404).json({ message: "Tarea no encontrada" });
         }
-        console.log("Tarea actualizada:", updatedTask);
-        res.status(200).json({ message: "Tarea actualizada", task: updatedTask });
+        console.log("Task updated:", updatedTask);
+        res.status(200).json({ message: "Task updated", task: updatedTask });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ message: "Error al actualizar la tarea" });
+        res.status(500).json({ message: "Error updating the task" });
     }
 };

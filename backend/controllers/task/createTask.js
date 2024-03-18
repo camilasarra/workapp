@@ -9,10 +9,10 @@ module.exports = async(req, res) => {
 
     console.log("TASK CREATED:", task);
 
-    res.status(201).json({ message: "Tarea creada", task });
+    res.status(201).json({ message: "Task Created", task });
 
     } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Error al crear la tarea" });
+    res.status(500).json({ message: "Error creating the task" });
 }
 };

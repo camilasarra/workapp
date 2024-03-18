@@ -9,10 +9,10 @@ module.exports = async (req, res) => {
                 return res.status(404).json({ message: "Tarea no encontrada" });
             }
             console.log("Tarea eliminada:", deletedTask);
-            res.status(200).json({ message: "Tarea eliminada", task: deletedTask });
+            res.status(200).json({ message: "Task deleted", task: deletedTask });
         } catch (error) {
             console.error(error);
-            res.status(500).json({ message: "Error al eliminar la tarea" });
+            res.status(500).json({ message: "Error deleting the task" });
         }
     };
 }

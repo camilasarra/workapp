@@ -1,37 +1,55 @@
 import React, { useState } from 'react';
-import { Calendar, momentLocalizer, dayjsLocalizer } from 'react-big-calendar';
+import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import dayjs from "dayjs";
 
 const MyCalendar = () => {
     const localizer = momentLocalizer(moment);
-    const [view, setView] = useState('month'); // Estado para controlar la vista actual
-  
+    const [view, setView] = useState('month'); 
+    const [showEventForm, setShowEventForm] = useState(false);
+    const [selectedDate, setSelectedDate] = useState(null);
+
+    const handleSelectSlot = (slotInfo) => {
+        setSelectedDate(slotInfo.start);
+        setShowEventForm(true);
+    }
+
     const onViewChange = view => {
-      setView(view); // Cambiar la vista actual
+        setView(view); 
     };
-  
+
+
+
+
     return (
-      <div>
         <div>
-          {/* Botones para cambiar entre las vistas */}
-          <button onClick={() => onViewChange('month')}>Mes</button>
-          <button onClick={() => onViewChange('week')}>Semana</button>
-          <button onClick={() => onViewChange('day')}>Día</button>
+            <div>
+                
+                <button onClick={() => onViewChange('month')}>Mes</button>
+                <button onClick={() => onViewChange('week')}>Semana</button>
+                <button onClick={() => onViewChange('day')}>Día</button>
+            </div>
+            <Calendar
+                localizer={localizer}
+                events={[]} 
+                startAccessor="start"
+                endAccessor="end"
+                views={['month', 'week', 'day']} 
+                view={view} 
+                onView={onViewChange}
+                style={{ width: "90vw", height: "77vh", fontSize: "1.2rem" }} // Estilos del calendario
+                onSelectSlot={handleSelectSlot}
+            />
+
+            {showEventForm && (
+                <div className='event-form'>
+                    <h2>Create Event for {moment(selectedDate).format("MMMM Do YYYY")}</h2>
+                    {}
+                    <button onClick={() => setShowEventForm(false)}>Close</button>
+                </div>
+            )}
         </div>
-        <Calendar
-          localizer={localizer}
-          events={[]} // Aquí irían tus eventos
-          startAccessor="start"
-          endAccessor="end"
-          views={['month', 'week', 'day']} // Vistas disponibles
-          view={view} // Vista actual
-          onView={onViewChange} 
-          style={{ width: "90vw", height: "77vh", fontSize: "1.2rem" }}// Manejador para cambiar la vista
-        />
-      </div>
     );
-  };
-  
-  export default MyCalendar;
+};
+
+export default MyCalendar;

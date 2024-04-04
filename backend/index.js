@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
 app.use(cors());
-app.use('/', router)
+
 
 
 //MongoDB connection
@@ -19,4 +19,4 @@ mongoose
     .then(()=> console.log("Connected to MongoDB Atlas"))
     .catch((error)=> console.error(error));
 
-app.listen(PORT, () => console.log("server listening on port 🤔", PORT));
+app.listen(PORT, () => console.log("server listening on port 😎", PORT));

@@ -15,6 +15,7 @@ module.exports = async(req, res) => {
         const superUsers = users.filter(user => user.isSuperuser)
 
         res.status(200).json({ normalUsers, superUsers })
+        
     } catch (error) {
         console.log("Error getting users", error)
         res.status(500).json({ message: "Error from server" })
